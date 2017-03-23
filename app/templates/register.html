@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block content %}
+    {{ super() }}
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+        <div class="alert-info">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endblock %}
