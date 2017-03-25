@@ -24,22 +24,24 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="1703beae-a0ac-4eb0-a9b7-b9b7b47b33e3">
-        <schema name="main" object-types="column, table, view" />
+      <connection connection-id="cc2b8e2d-8032-44e8-8bd5-b0b2c04ada37">
+        <schema name="main" object-types="column, constraint, index, table, dataset trigger, view" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="1703beae-a0ac-4eb0-a9b7-b9b7b47b33e3">
-      <console name="sample" type="STANDARD" />
+    <connection id="cc2b8e2d-8032-44e8-8bd5-b0b2c04ada37">
+      <console name="data.sqlite" type="STANDARD" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-list connection-id="1703beae-a0ac-4eb0-a9b7-b9b7b47b33e3" dataset="main.users" active-filter-id="EMPTY_FILTER" />
-    <filter-list connection-id="1703beae-a0ac-4eb0-a9b7-b9b7b47b33e3" dataset="main.roles" active-filter-id="EMPTY_FILTER" />
+    <filter-list connection-id="cc2b8e2d-8032-44e8-8bd5-b0b2c04ada37" dataset="main.users" active-filter-id="EMPTY_FILTER" />
+    <filter-list connection-id="cc2b8e2d-8032-44e8-8bd5-b0b2c04ada37" dataset="main.roles" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
-    <last-used-providers />
+    <last-used-providers>
+      <object-type object-type="TABLE" editor-provider="DATA" />
+    </last-used-providers>
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
     <mapping file-url="file://$PROJECT_DIR$/app/localhost.sql" connection-id="1703beae-a0ac-4eb0-a9b7-b9b7b47b33e3" current-schema="hello" />
@@ -67,10 +69,10 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="1703beae-a0ac-4eb0-a9b7-b9b7b47b33e3" active="true">
+      <connection id="cc2b8e2d-8032-44e8-8bd5-b0b2c04ada37" active="true">
         <database>
-          <name value="sample" />
-          <description value="role and user" />
+          <name value="data.sqlite" />
+          <description value="" />
           <database-type value="SQLITE" />
           <config-type value="BASIC" />
           <database-version value="3.0" />

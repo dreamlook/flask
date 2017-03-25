@@ -16,9 +16,13 @@ def services():
 
 @main.route('/about')
 def about():
-    return 'about'
+    return redirect(url_for('auth.login'))
 
-@main.route('/inde')
+@main.route('/register')
+def register():
+    return redirect(url_for('auth.register'))
+
+@main.route('/index')
 def index():
     return 'index'
 
@@ -51,11 +55,11 @@ def upload():
 def page_not_found(error):
     return render_template('404.html'),404
 
-@main.template_test('current_link')
-def is_current_link(link):
-    return link == request.path
+# @main.template_test('current_link')
+# def is_current_link(link):
+#     return link == request.path
 
-@main.template_filter('md')
-def markdown_to_html(txt):
-    from markdown import markdown
-    return markdown(txt)
+# @main.template_filter('md')
+# def markdown_to_html(txt):
+#     from markdown import markdown
+#     return markdown(txt)

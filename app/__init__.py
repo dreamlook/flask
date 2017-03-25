@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 from os import path
-
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_nav import  Nav
 from flask_nav.elements import *
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.routing import  BaseConverter
-
-from app.main.views import init_views
+from flask_login import LoginManager
 
 class RegexConverter(BaseConverter):
     def __init__(self,url_map,*items):
@@ -19,8 +17,11 @@ basedir = path.abspath(path.dirname(__file__))#数据库配置
 
 #全局变量 跨文件引用
 bootstrap = Bootstrap()
-#nav = Nav()
+nav = Nav()
 db = SQLAlchemy()
+login_manager = LoginManager()
+login_manager.session_protection='strong'
+login_manager.login_view='auth.login'
 #manager = Manager(app)
 
 def create_app():
@@ -39,11 +40,13 @@ def create_app():
                                        View(u'项目', 'projects'), ))
     db.init_app(app)
     bootstrap.init_app(app)
-    #nav.init_app(app)
+    login_manager.init_app(app)
+    nav.init_app(app)
     #init_views(app)
     from auth import auth as auth_blueprint
     from main import main as main_blueprint
-    app.register_blueprint(auth_blueprint,'/auth')
+    app.register_blueprint(auth_blueprint,url_prefix='/auth')
+    app.register_blueprint(main_blueprint, static_folder='static')
     return app
 
 def read_md(filename):
